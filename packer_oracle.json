@@ -36,7 +36,7 @@
 		"<leftCtrlOn>k<leftCtrlOff><wait>",
 		"<leftCtrlOn>k<leftCtrlOff><wait>",
         "<wait>",
-		"linuxefi /images/pxeboot/vmlinuz inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/oracle.cfg",
+		"linuxefi /images/pxeboot/vmlinuz inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-oracle.cfg",
         "<wait><leftCtrlOn>x<leftCtrlOff><wait>"
       ],
 	  "shutdown_command": "echo 'password' | shutdown -P now",
