@@ -42,7 +42,7 @@
 		"initrd /install.amd/initrd.gz <wait>",
 		"<leftCtrlOn>x<leftCtrlOff><wait>",
         "<wait40>",
-		"http://{{ .HTTPIP }}:{{ .HTTPPort }}/debian.conf <enter>",
+		"http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-debian.conf <enter>",
         "<wait40>"
       ],
 	  "shutdown_command": "echo 'password' | shutdown -P now",
