@@ -1,0 +1,57 @@
+{
+  "variables": {
+    "vm_name": "oracle",
+    "cpus": "2",
+    "memory": "4096",
+	"generation": "2",
+    "disk_size": "62000",
+    "iso_url": "D:/iso/OracleLinux-R8-U4-x86_64-dvd.iso",
+	"iso_checksum": "none",
+	"output_directory": "./oracle/",
+	"switch_name": "vSwitch"
+  },
+  "builders": [
+    {
+      "vm_name": "{{user `vm_name`}}",
+      "type": "hyperv-iso",
+      "disk_size": "{{user `disk_size`}}",
+      "guest_additions_mode": "disable",
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+	  "switch_name": "{{user `switch_name`}}",
+      "communicator": "ssh",
+      "ssh_username": "root",
+      "ssh_password": "password",
+	  "ssh_host": "192.168.0.11",
+      "ssh_timeout": "1h",
+	  "http_port_min": "8787",
+	  "http_port_max": "8787",
+      "http_directory": "./",
+	  "boot_keygroup_interval": "1000ms",
+      "boot_wait": "10s",
+      "boot_command": [
+        "e<wait>",
+		"<leftCtrlOn>k<leftCtrlOff><wait>",
+		"<leftCtrlOn>k<leftCtrlOff><wait>",
+		"<leftCtrlOn>k<leftCtrlOff><wait>",
+		"<leftCtrlOn>k<leftCtrlOff><wait>",
+        "<wait>",
+		"linuxefi /images/pxeboot/vmlinuz inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/oracle.cfg",
+        "<wait><leftCtrlOn>x<leftCtrlOff><wait>"
+      ],
+	  "shutdown_command": "echo 'password' | shutdown -P now",
+	  "output_directory": "{{user `output_directory`}}",
+      "memory": "{{user `memory`}}",
+      "cpus": "{{user `cpus`}}",
+      "generation": 2,
+      "enable_secure_boot": false
+    }
+  ],
+   "provisioners": [
+    {
+      "type": "shell",
+      "pause_before": "5s",
+      "inline": ["yum install -y wget sudo hyperv-daemons net-tools mtr mc zip unzip ca-certificates curl gnupg2 parted nano python3"]
+	}
+	]
+}
