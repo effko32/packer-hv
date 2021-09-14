@@ -45,7 +45,7 @@
 		"http://{{ .HTTPIP }}:{{ .HTTPPort }}/debian.conf <enter>",
         "<wait40>"
       ],
-	  "shutdown_command": "echo 'Qwerty01' | shutdown -P now",
+	  "shutdown_command": "echo 'password' | shutdown -P now",
 	  "output_directory": "{{user `output_directory`}}",
       "memory": "{{user `memory`}}",
       "cpus": "{{user `cpus`}}",
