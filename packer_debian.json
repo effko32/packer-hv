@@ -1,6 +1,6 @@
 {
   "variables": {
-    "vm_name": "debian2",
+    "vm_name": "debian",
     "cpus": "2",
     "memory": "4096",
     "generation": "2",
