@@ -5,7 +5,7 @@
     "memory": "4096",
     "generation": "2",
     "disk_size": "102400",
-    "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso", # Исправить URL образа
+    "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso",
     "iso_checksum": "none",
     "output_directory": "./debian/",
     "switch_name": "vSwitch"
@@ -42,7 +42,7 @@
 	"initrd /install.amd/initrd.gz <wait>",
 	"<leftCtrlOn>x<leftCtrlOff><wait>",
         "<wait40>",
-	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-debian.conf <enter>", # Исправить URL
+	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-debian.conf <enter>",
         "<wait40>"
       ],
       "shutdown_command": "echo 'password' | shutdown -P now",
