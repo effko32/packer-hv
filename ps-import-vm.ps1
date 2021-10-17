@@ -1,4 +1,4 @@
 $VMName = "debian"
 
-dir "D:\packer\$VMName\Virtual Machines\*.vmcx" | Import-VM -Copy -VhdDestinationPath "D:\VirtualMachines\$VMName\Virtual Hard Disks" -VirtualMachinePath "D:\VirtualMachines\$VMName" -GenerateNewId
+dir "C:\github_effko32_packer-hv\$VMName\Virtual Machines\*.vmcx" | Import-VM -Copy -VhdDestinationPath "C:\VirtualMachines\$VMName\Virtual Hard Disks" -VirtualMachinePath "C:\VirtualMachines\$VMName" -GenerateNewId
 Start-VM $VMName
