@@ -22,9 +22,8 @@
       "communicator": "ssh",
       "ssh_username": "root",
       "ssh_password": "password",
-      "ssh_host": "192.168.0.10",
       "ssh_timeout": "1h",
-      "http_directory": "./",
+      "http_directory": "./packer-hv/http/",
       "boot_wait": "5s",
       "boot_command": [
         "e<wait>",
