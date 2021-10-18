@@ -2,10 +2,10 @@
   "variables": {
     "vm_name": "oracle",
     "cpus": "2",
-    "memory": "4096",
+    "memory": "1024",
     "generation": "2",
     "disk_size": "62000",
-    "iso_url": "D:/iso/OracleLinux-R8-U4-x86_64-dvd.iso",
+    "iso_url": "https://yum.oracle.com/ISOS/OracleLinux/OL8/u4/x86_64/x86_64-boot.iso",
     "iso_checksum": "none",
     "output_directory": "./oracle/",
     "switch_name": "vSwitch"
