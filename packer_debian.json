@@ -23,7 +23,7 @@
       "ssh_username": "root",
       "ssh_password": "password",
       "ssh_timeout": "1h",
-      "http_directory": "./packer-hv/http/",
+      "http_directory": "C:/repos/packer-hv/http/",
       "boot_wait": "5s",
       "boot_command": [
         "e<wait>",
