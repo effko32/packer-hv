@@ -2,7 +2,7 @@
   "variables": {
     "vm_name": "debian",
     "cpus": "2",
-    "memory": "4096",
+    "memory": "1024",
     "generation": "2",
     "disk_size": "102400",
     "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso",
