@@ -1,14 +1,18 @@
 # packer-hv
-For creating VM on Hyper-V (Packer)
+## For creating VM on Hyper-V (Packer)
 
-Для развертывания виртуальных машин в Hyper-V
+## Для развертывания виртуальных машин в Hyper-V  
 
-mkdir C:\repos
+Create dir:  
+`mkdir C:\repos`
 
-cd C:\repos
+`cd C:\repos`  
 
-git clone https://github.com/effko32/packer-hv
+Clone repository:  
+`git clone https://github.com/effko32/packer-hv`  
 
-cd C:\packer
+Go to the folder with packer.exe:  
+`cd C:\packer`  
 
-PS C:\packer> .\packer.exe build C:\repos\packer-hv\packer_debian.json
+Launch build:  
+`PS C:\packer> .\packer.exe build C:\repos\packer-hv\packer_debian.json`
