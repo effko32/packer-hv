@@ -50,7 +50,7 @@
     {
       "type": "shell",
       "pause_before": "5s",
-      "inline": ["yum install -y wget sudo hyperv-daemons net-tools mtr mc zip unzip ca-certificates curl gnupg2 parted nano python3"]
+      "inline": ["yum install -y tar bash-completion wget sudo hyperv-daemons net-tools mtr mc zip unzip ca-certificates curl gnupg2 parted nano python3"]
 	}
 	]
 }
