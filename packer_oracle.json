@@ -7,7 +7,7 @@
     "disk_size": "62000",
     "iso_url": "https://yum.oracle.com/ISOS/OracleLinux/OL8/u4/x86_64/OracleLinux-R8-U4-x86_64-dvd.iso",
     "iso_checksum": "none",
-    "output_directory": "./oracle/",
+    "output_directory": "./{{user `vm_name`}}/",
     "switch_name": "vSwitch"
   },
   "builders": [
@@ -35,14 +35,14 @@
 	"<leftCtrlOn>k<leftCtrlOff><wait>",
 	"<leftCtrlOn>k<leftCtrlOff><wait>",
         "<wait>",
-	"linuxefi /images/pxeboot/vmlinuz inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-oracle.cfg",
+	"linuxefi /images/pxeboot/vmlinuz inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `vm_name`}}.cfg",
         "<wait><leftCtrlOn>x<leftCtrlOff><wait>"
       ],
       "shutdown_command": "echo 'password' | shutdown -P now",
       "output_directory": "{{user `output_directory`}}",
       "memory": "{{user `memory`}}",
       "cpus": "{{user `cpus`}}",
-      "generation": 2,
+      "generation": "{{user `generation`}}",
       "enable_secure_boot": false
     }
   ],
@@ -50,7 +50,7 @@
     {
       "type": "shell",
       "pause_before": "5s",
-      "inline": ["yum install -y tar bash-completion wget sudo hyperv-daemons net-tools mtr mc zip unzip ca-certificates curl gnupg2 parted nano python3"]
+      "inline": ["yum install -y wget sudo hyperv-daemons net-tools mtr mc zip unzip ca-certificates curl gnupg2 parted nano python3 python3-pexpect tar bash-completion"]
 	}
 	]
 }

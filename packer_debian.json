@@ -7,7 +7,7 @@
     "disk_size": "102400",
     "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso",
     "iso_checksum": "none",
-    "output_directory": "./debian/",
+    "output_directory": "./{{user `vm_name`}}/",
     "switch_name": "vSwitch"
   },
   "builders": [
@@ -41,14 +41,14 @@
 	"initrd /install.amd/initrd.gz <wait>",
 	"<leftCtrlOn>x<leftCtrlOff><wait>",
         "<wait40>",
-	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-debian.conf <enter>",
+	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `vm_name`}}.conf <enter>",
         "<wait40>"
       ],
       "shutdown_command": "echo 'password' | shutdown -P now",
       "output_directory": "{{user `output_directory`}}",
       "memory": "{{user `memory`}}",
       "cpus": "{{user `cpus`}}",
-      "generation": 2,
+      "generation": "{{user `generation`}}",
       "enable_secure_boot": false
     }
   ],
