@@ -62,8 +62,10 @@
   "post-processors": [
     {
       "type": "shell-local",
-      "execute_command": ["powershell.exe", "{{.Script}}"],
-      "script": "C:/repos/packer-hv/ps-import-vm.ps1"
+      "environment_vars": ["VMName={{user `vm_name`}}"],
+      "execute_command": ["powershell.exe", "{{.Vars}} {{.Script}}"],
+      "env_var_format": "$env:%s=\"%s\"; ",
+      "script": "C:/repos/packer-hv/ps-import-post-vm.ps1"
     }
   ]
 }
