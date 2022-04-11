@@ -41,7 +41,7 @@
 	"initrd /install.amd/initrd.gz <wait>",
 	"<leftCtrlOn>x<leftCtrlOff><wait>",
         "<wait40>",
-	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `vm_name`}}.conf <enter>",
+	"http://{{ .HTTPIP }}:{{ .HTTPPort }}/http/{{user `vm_name`}}.conf <enter>",
         "<wait40>"
       ],
       "shutdown_command": "echo 'password' | shutdown -P now",
